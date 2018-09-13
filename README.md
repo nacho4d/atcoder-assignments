@@ -1,16 +1,19 @@
 # Collection of some assignments of [AtCoder.jp](https://atcoder.jp/)
 
-mostly implemented in cpp
+Mostly implemented in C++14 with [meson](http://mesonbuild.com/)
+
+## Generate and run a program template
+
+    # Create assignment 190_1
+    ./generate 190_1
+    
+    # Edit/Solve the assignment
+    cd 190_1;
+    open main.cpp
+    
+    # Run it
+    ../run .
+
 
 ##  Why cpp?  
-Because same algoriths in other language languages sometimes do not pass tests (Java, Javascript consume too much memory and/or time)
-I considered swift too but now (2019/09/14) swift version in atcoder.jp is old and syntax is a bit different.
-
-## Run a program
-
-Everything is done with [meson](http://mesonbuild.com/) and other helper scripts
-
-## Generate a program template
-
-todo
-
+I have tried other language I am more familiar with like Java/Javascript, they consume too much memory and executiong time sometimes exceeds limits of assignments. Swift was also one of my candidates but as of 2019/09/14, AtCoder's swift version is old and syntax is a bit different.
