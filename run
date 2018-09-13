@@ -1,0 +1,26 @@
+#! /bin/bash -x
+
+DIR=$1
+
+# Check first argument is valid
+if [ -z "$1" ]; then
+    echo "Usage: $0 <new_directory_name>"
+    exit 1
+fi
+
+# Exit if directory exists
+#if [[ -d $DIR ]]; then
+#    echo directory $DIR already exists. doing nothing.
+#    exit 2
+#fi
+
+pushd $DIR
+BUILDDIR='builddir'
+EXECUTABLE='out'
+mkdir -p $BUILDDIR
+meson $BUILDDIR
+ninja -C $BUILDDIR
+echo " "
+echo "Running \'./${BUILDDIR}/${EXECUTABLE}\'"
+./$BUILDDIR/${EXECUTABLE}
+
