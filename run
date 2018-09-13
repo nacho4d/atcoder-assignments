@@ -1,4 +1,4 @@
-#! /bin/bash -x
+#! /bin/bash
 
 DIR=$1
 
@@ -8,19 +8,16 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-# Exit if directory exists
-#if [[ -d $DIR ]]; then
-#    echo directory $DIR already exists. doing nothing.
-#    exit 2
-#fi
-
-pushd $DIR
 BUILDDIR='builddir'
 EXECUTABLE='out'
-mkdir -p $BUILDDIR
-meson $BUILDDIR
-ninja -C $BUILDDIR
-echo " "
-echo "Running \'./${BUILDDIR}/${EXECUTABLE}\'"
-./$BUILDDIR/${EXECUTABLE}
+
+pushd $DIR
+
+# mkdir -p $BUILDDIR
+# meson $BUILDDIR
+
+ninja -C ${BUILDDIR}
+echo "Running './${BUILDDIR}/${EXECUTABLE}'"
+echo ' '
+./${BUILDDIR}/${EXECUTABLE}
 

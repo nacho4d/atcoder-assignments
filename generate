@@ -40,6 +40,7 @@ int main(void) {
 }
 EOT
 
-
-
-
+# meson setup (one time setup)
+BUILDDIR='builddir'
+mkdir -p $BUILDDIR
+meson $BUILDDIR
