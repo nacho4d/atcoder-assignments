@@ -1,0 +1,11 @@
+# MacOs finder garbage
+.DS_Store
+
+# emacs trash
+meson.build~
+
+# common build directories (including typos, etc)
+builddir/
+buildir/
+build/
+build-xcode/
